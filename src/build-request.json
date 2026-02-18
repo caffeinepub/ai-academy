@@ -1,0 +1,220 @@
+{
+  "kind": "build_request",
+  "title": "AI Academy premium course & ebook sales website",
+  "projectName": "AI Academy",
+  "priority": "normal",
+  "requirements": [
+    {
+      "id": "REQ-1",
+      "text": "Create a premium, high-end, trustworthy dark UI with royal blue/purple gradients, glassmorphism cards, smooth hover/scroll animations, and full mobile responsiveness; use professional typography (Poppins and/or Inter) and apply the style consistently across all pages/sections.",
+      "target": "frontend",
+      "source": {
+        "messageIds": [
+          "msg-1"
+        ],
+        "quotes": [
+          "Premium dark + gradient modern UI",
+          "Colors: Black, Royal Blue, Purple gradient, White text",
+          "Clean glassmorphism cards",
+          "Smooth animations and hover effects",
+          "Fully mobile responsive",
+          "Professional fonts (Poppins / Inter)"
+        ]
+      },
+      "acceptanceCriteria": [
+        "Site uses a dark theme with royal blue/purple gradient accents and white text, and the theme is visually consistent across all sections.",
+        "All primary content surfaces (cards/sections) use a glassmorphism-style treatment (blur/translucency) while maintaining readable contrast.",
+        "Buttons/cards have clear hover/focus states and subtle animation (e.g., transform/opacity) without harming performance.",
+        "Layout adapts cleanly to mobile, tablet, and desktop breakpoints."
+      ]
+    },
+    {
+      "id": "REQ-2",
+      "text": "Implement the homepage with the specified sections and exact hero copy/CTAs: Hero (heading “Master AI & Digital Skills and Earn Online”, subtext “Learn AI, freelancing, and digital skills with practical courses & ebooks”, CTA buttons “View Courses”, “Buy Ebooks”, “Join WhatsApp”), Featured Courses, Ebook Store, Why Choose AI Academy, Student Results/Testimonials, Pricing & Offers (combo/discount/limited-time), WhatsApp CTA banner, and Footer with about/contact/WhatsApp/social icons/copyright.",
+      "target": "frontend",
+      "source": {
+        "messageIds": [
+          "msg-1"
+        ],
+        "quotes": [
+          "🏠 Homepage Sections:",
+          "Big heading: “Master AI & Digital Skills and Earn Online”",
+          "Subtext: Learn AI, freelancing, and digital skills with practical courses & ebooks",
+          "CTA buttons: “View Courses” “Buy Ebooks” “Join WhatsApp”",
+          "Featured Courses Section",
+          "Ebook Store Section",
+          "Why Choose AI Academy",
+          "Student Results / Testimonials",
+          "Pricing & Offers",
+          "WhatsApp CTA Section",
+          "Footer"
+        ]
+      },
+      "acceptanceCriteria": [
+        "Homepage renders all requested sections in the same order (Hero, Featured Courses, Ebook Store, Why Choose, Testimonials/Results, Pricing & Offers, WhatsApp CTA, Footer).",
+        "Hero section displays the exact heading/subtext and three CTA buttons with the exact labels.",
+        "“Join WhatsApp” CTA navigates to WhatsApp chat for +91 8171739752.",
+        "Footer includes About AI Academy text area, contact info, a WhatsApp link/button, social media icon placeholders/links, and copyright line."
+      ]
+    },
+    {
+      "id": "REQ-3",
+      "text": "Add data-driven product listings for exactly 4 featured courses (AI Mastery Course, ChatGPT Earning Course, Freelancing Course, Instagram Growth Course) and exactly 4 ebooks (AI Tools Ebook, Online Earning Ebook, Freelancing Blueprint, Digital Marketing Ebook), each showing name, price, image, and a buy button; enable “View Courses” and “Buy Ebooks” hero CTAs to scroll/navigate to their respective sections.",
+      "target": "both",
+      "source": {
+        "messageIds": [
+          "msg-1"
+        ],
+        "quotes": [
+          "Featured Courses Section",
+          "(Each with price, image, buy button)",
+          "Ebook Store Section",
+          "Add price + instant buy button",
+          "AI Mastery Course",
+          "ChatGPT Earning Course",
+          "Freelancing Course",
+          "Instagram Growth Course",
+          "AI Tools Ebook",
+          "Online Earning Ebook",
+          "Freelancing Blueprint",
+          "Digital Marketing Ebook"
+        ]
+      },
+      "acceptanceCriteria": [
+        "Featured Courses section displays exactly 4 course cards with name, price, image, and a “Buy” action.",
+        "Ebook Store section displays exactly 4 ebook cards with name, price, cover image, and an “Instant Buy” action.",
+        "Clicking “View Courses” moves the user to the Featured Courses section; clicking “Buy Ebooks” moves the user to the Ebook Store section.",
+        "Catalog data is sourced from the backend so prices/images/titles can be updated centrally without rebuilding the frontend."
+      ]
+    },
+    {
+      "id": "REQ-4",
+      "text": "Implement WhatsApp contact integration across the site: all WhatsApp CTAs/buttons must open WhatsApp chat to +91 8171739752, including the dedicated WhatsApp CTA banner (“Need Help? Chat on WhatsApp”) and at least one persistent WhatsApp entry point (e.g., header or floating button).",
+      "target": "frontend",
+      "source": {
+        "messageIds": [
+          "msg-1"
+        ],
+        "quotes": [
+          "WhatsApp CTA Section",
+          "Big banner: “Need Help? Chat on WhatsApp”",
+          "Button connect to WhatsApp:\n+91 8171739752",
+          "Support on WhatsApp"
+        ]
+      },
+      "acceptanceCriteria": [
+        "All WhatsApp buttons/links open a WhatsApp chat to +91 8171739752 using a wa.me (or equivalent) URL.",
+        "A dedicated WhatsApp CTA banner section is present with the specified headline and a button to WhatsApp.",
+        "There is at least one additional WhatsApp entry point outside the banner (e.g., in header/footer or a floating button)."
+      ]
+    },
+    {
+      "id": "REQ-5",
+      "text": "Add a purchase flow that supports the listed payment options (Razorpay, UPI, Paytm, Debit/Credit card) by presenting a checkout UI where users select a payment method and proceed; implement a configurable payment-link strategy per product/method (stored in backend configuration) that can redirect users to the appropriate external payment URL when available, and provide a fallback instruction state (e.g., “Contact on WhatsApp”) when a link is not configured.",
+      "target": "both",
+      "source": {
+        "messageIds": [
+          "msg-1"
+        ],
+        "quotes": [
+          "💳 Payment Gateway Integration:\n\nAdd payment options:\n\nRazorpay\n\nUPI\n\nPaytm\n\nDebit/Credit card"
+        ]
+      },
+      "acceptanceCriteria": [
+        "Clicking buy on any course/ebook opens a checkout UI listing Razorpay, UPI, Paytm, and Debit/Credit card as payment options.",
+        "For each product+payment-method combination, the system can be configured with a payment URL in the backend and the frontend will redirect to it when present.",
+        "If a payment URL is missing for a chosen method, the UI shows a clear fallback path that includes a WhatsApp contact link to +91 8171739752.",
+        "Purchase attempts are recorded (e.g., created as an order/intent) in the backend with product, price at time of purchase, and chosen payment method."
+      ]
+    },
+    {
+      "id": "REQ-6",
+      "text": "Provide “instant ebook download after payment” via a backend-managed delivery mechanism: after a purchase is marked paid, the user can download the purchased ebook file from the frontend (served as a static asset) through a gated download link/token created by the backend; include a simple “My Downloads” page that lists paid ebook purchases for the current session/principal and allows downloading.",
+      "target": "both",
+      "source": {
+        "messageIds": [
+          "msg-1"
+        ],
+        "quotes": [
+          "Instant ebook download after payment"
+        ]
+      },
+      "acceptanceCriteria": [
+        "There is a user-facing page/section (“My Downloads” or equivalent) that lists ebooks that have been marked paid and shows a download button for each.",
+        "Ebook files are served as static assets from the frontend build (not streamed through the backend), and download access is gated by a backend-issued token or authorization check.",
+        "Unpaid ebook purchases do not show active download buttons.",
+        "Backend stores purchase/payment status for ebook orders and can transition an order from unpaid to paid (initial implementation may include a simple internal/admin-only method or a temporary UI action clearly labeled as a placeholder until real payment confirmation is wired)."
+      ]
+    },
+    {
+      "id": "REQ-7",
+      "text": "Add a Testimonials/Student Results section with 4–6 review cards and an “earnings screenshots style” layout using provided/generated placeholder assets; ensure the section matches the premium glassmorphism theme and remains readable on mobile.",
+      "target": "frontend",
+      "source": {
+        "messageIds": [
+          "msg-1"
+        ],
+        "quotes": [
+          "Student Results / Testimonials",
+          "4-6 student success reviews",
+          "Earnings screenshots style layout"
+        ]
+      },
+      "acceptanceCriteria": [
+        "Testimonials section shows between 4 and 6 testimonials with names/short quotes and a visual “results screenshot” style element per entry (or a subset).",
+        "Layout is responsive and maintains good spacing/typography on mobile.",
+        "Section styling matches the site theme (dark, gradient accents, glass cards)."
+      ]
+    },
+    {
+      "id": "REQ-8",
+      "text": "Generate and include required static images (logo, hero background, product thumbnails/covers, testimonial-style result screenshots) and render them from frontend static assets; do not serve generated images from the backend.",
+      "target": "frontend",
+      "source": {
+        "messageIds": [
+          "msg-1"
+        ],
+        "quotes": [
+          "(Each with price, image, buy button)",
+          "Add price + instant buy button",
+          "Earnings screenshots style layout"
+        ]
+      },
+      "acceptanceCriteria": [
+        "All course cards show a thumbnail image; all ebook cards show a cover image; hero uses a premium background/visual.",
+        "Generated images are stored and referenced as static assets under frontend/public/assets/generated (or equivalent static public directory).",
+        "No backend endpoint is required to fetch or transform images at runtime."
+      ]
+    }
+  ],
+  "constraints": [
+    "Backend must remain a single Motoko actor (single-actor architecture).",
+    "Do not edit any files under frontend immutable paths (frontend/src/hooks/useInternetIdentity.ts, frontend/src/hooks/useInternetIdentity.tsx, frontend/src/hooks/useActor.ts, frontend/src/main.tsx, frontend/src/components/ui); compose/read from them instead.",
+    "Use English for all user-facing UI text."
+  ],
+  "nonGoals": [
+    "Building a full learner dashboard with lesson streaming/progress tracking (not requested).",
+    "Implementing third-party authentication beyond Internet Identity (not requested).",
+    "Integrating a guaranteed real-time payment verification webhook flow for Razorpay/Paytm/UPI (requires external integrations not provided in the request).",
+    "Implementing real-time chat or push notifications."
+  ],
+  "imageRequirements": {
+    "required": [
+      "Premium edtech wordmark logo on dark background, sleek minimal style (ai-academy-logo.dim_512x256.png)",
+      "Abstract dark gradient hero background with royal blue and purple light streaks, modern high-end (hero-background.dim_1920x1080.png)",
+      "Course thumbnail: futuristic AI/brain/circuit illustration, dark premium (course-ai-mastery.dim_800x450.png)",
+      "Course thumbnail: ChatGPT/assistant iconography, dark premium (course-chatgpt-earning.dim_800x450.png)",
+      "Course thumbnail: freelancing/remote work abstract illustration, dark premium (course-freelancing.dim_800x450.png)",
+      "Course thumbnail: social media growth abstract chart/phone illustration, dark premium (course-instagram-growth.dim_800x450.png)",
+      "Ebook cover: AI tools themed, premium dark (ebook-ai-tools.dim_800x1200.png)",
+      "Ebook cover: online earning themed, premium dark (ebook-online-earning.dim_800x1200.png)",
+      "Ebook cover: freelancing blueprint themed, premium dark (ebook-freelancing-blueprint.dim_800x1200.png)",
+      "Ebook cover: digital marketing themed, premium dark (ebook-digital-marketing.dim_800x1200.png)",
+      "Testimonial result screenshot-style card image, dark UI with subtle numbers/graph (result-1.dim_900x600.png)",
+      "Testimonial result screenshot-style card image, dark UI with subtle numbers/graph (result-2.dim_900x600.png)",
+      "Testimonial result screenshot-style card image, dark UI with subtle numbers/graph (result-3.dim_900x600.png)",
+      "Testimonial result screenshot-style card image, dark UI with subtle numbers/graph (result-4.dim_900x600.png)"
+    ],
+    "edits": []
+  }
+}

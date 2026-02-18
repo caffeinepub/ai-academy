@@ -1,0 +1,345 @@
+{
+  "kind": "implementation_plan",
+  "version": "1.0",
+  "title": "AI Academy premium course & ebook sales website (frontend)",
+  "requirements": [
+    {
+      "id": "REQ-1",
+      "summary": "Establish a premium dark theme with royal blue/purple gradients, glassmorphism surfaces, smooth animations, mobile responsiveness, and professional typography applied consistently site-wide.",
+      "acceptanceCriteria": [
+        "Site uses a dark theme with royal blue/purple gradient accents and white text, and the theme is visually consistent across all sections.",
+        "All primary content surfaces (cards/sections) use a glassmorphism-style treatment (blur/translucency) while maintaining readable contrast.",
+        "Buttons/cards have clear hover/focus states and subtle animation (e.g., transform/opacity) without harming performance.",
+        "Layout adapts cleanly to mobile, tablet, and desktop breakpoints."
+      ],
+      "file_operations": [
+        {
+          "path": "frontend/index.html",
+          "operation": "modify",
+          "description": "Add Poppins and/or Inter font loading (e.g., via Google Fonts) and ensure the document is set up for a dark premium look without changing user-facing copy."
+        },
+        {
+          "path": "frontend/src/index.css",
+          "operation": "create",
+          "description": "Create global Tailwind entry styles, theme tokens/variables for dark UI, gradient accents, glassmorphism utilities (blur/translucent surfaces), and consistent typography defaults."
+        },
+        {
+          "path": "frontend/tailwind.config.js",
+          "operation": "modify",
+          "description": "Extend Tailwind theme to support the royal blue/purple gradient palette, glassmorphism-friendly tokens (e.g., translucent card colors), and animation utilities for smooth hover/scroll effects."
+        },
+        {
+          "path": "frontend/src/components/GlassCard.tsx",
+          "operation": "create",
+          "description": "Create a reusable GlassCard wrapper component implementing consistent glassmorphism styling and accessible focus/hover states."
+        },
+        {
+          "path": "frontend/src/components/Section.tsx",
+          "operation": "create",
+          "description": "Create a reusable Section component for consistent spacing, max-width behavior, and responsive layout across homepage sections."
+        }
+      ]
+    },
+    {
+      "id": "REQ-2",
+      "summary": "Implement the homepage with all required sections, exact hero copy/CTAs, WhatsApp navigation, and a complete footer.",
+      "acceptanceCriteria": [
+        "Homepage renders all requested sections in the same order (Hero, Featured Courses, Ebook Store, Why Choose, Testimonials/Results, Pricing & Offers, WhatsApp CTA, Footer).",
+        "Hero section displays the exact heading/subtext and three CTA buttons with the exact labels.",
+        "“Join WhatsApp” CTA navigates to WhatsApp chat for +91 8171739752.",
+        "Footer includes About AI Academy text area, contact info, a WhatsApp link/button, social media icon placeholders/links, and copyright line."
+      ],
+      "file_operations": [
+        {
+          "path": "frontend/src/App.tsx",
+          "operation": "create",
+          "description": "Create the application shell, wire in homepage rendering as the default route/view, and include shared layout elements (header/footer hooks) needed for navigation between sections and pages."
+        },
+        {
+          "path": "frontend/src/pages/HomePage.tsx",
+          "operation": "create",
+          "description": "Implement the homepage with the required section order and exact hero copy/CTA labels; include in-page anchors/refs for Featured Courses and Ebook Store sections for CTA scrolling."
+        },
+        {
+          "path": "frontend/src/components/Footer.tsx",
+          "operation": "create",
+          "description": "Implement footer content (About, contact info, WhatsApp link/button, social icon placeholders/links, copyright) with premium dark styling."
+        },
+        {
+          "path": "frontend/src/components/Header.tsx",
+          "operation": "create",
+          "description": "Implement a premium header that includes primary navigation and at least one WhatsApp entry point while remaining mobile responsive."
+        },
+        {
+          "path": "frontend/src/utils/whatsapp.ts",
+          "operation": "create",
+          "description": "Centralize WhatsApp URL construction for +91 8171739752 and expose a helper used by all WhatsApp CTAs to ensure consistency."
+        }
+      ]
+    },
+    {
+      "id": "REQ-3",
+      "summary": "Show data-driven listings for exactly 4 featured courses and 4 ebooks with name/price/image/buy actions; wire hero CTAs to scroll to the relevant sections.",
+      "acceptanceCriteria": [
+        "Featured Courses section displays exactly 4 course cards with name, price, image, and a “Buy” action.",
+        "Ebook Store section displays exactly 4 ebook cards with name, price, cover image, and an “Instant Buy” action.",
+        "Clicking “View Courses” moves the user to the Featured Courses section; clicking “Buy Ebooks” moves the user to the Ebook Store section.",
+        "Catalog data is sourced from the backend so prices/images/titles can be updated centrally without rebuilding the frontend."
+      ],
+      "file_operations": [
+        {
+          "path": "frontend/src/hooks/useProducts.ts",
+          "operation": "create",
+          "description": "Create React Query hooks that use useActor() to fetch products from the backend (by type) and expose loading/error states for the homepage."
+        },
+        {
+          "path": "frontend/src/components/ProductCard.tsx",
+          "operation": "create",
+          "description": "Create a reusable product card (glassmorphism) that renders backend-sourced name/price/image and a buy button; use shadcn-ui primitives (e.g., Button/Card-like composition) for consistent behavior. Verify the component's usage instructions before implementing."
+        },
+        {
+          "path": "frontend/src/components/FeaturedCoursesSection.tsx",
+          "operation": "create",
+          "description": "Implement the Featured Courses section to render exactly the 4 required course products (filtered/selected by id/name from backend results) with buy actions and responsive layout."
+        },
+        {
+          "path": "frontend/src/components/EbookStoreSection.tsx",
+          "operation": "create",
+          "description": "Implement the Ebook Store section to render exactly the 4 required ebook products (filtered/selected by id/name from backend results) with instant buy actions and responsive layout."
+        },
+        {
+          "path": "frontend/src/pages/HomePage.tsx",
+          "operation": "modify",
+          "description": "Wire Hero CTAs “View Courses” and “Buy Ebooks” to scroll to the Featured Courses and Ebook Store sections (using refs/IDs) and ensure only the specified products appear."
+        }
+      ]
+    },
+    {
+      "id": "REQ-4",
+      "summary": "Integrate WhatsApp contact CTAs site-wide, including a dedicated banner and a persistent entry point.",
+      "acceptanceCriteria": [
+        "All WhatsApp buttons/links open a WhatsApp chat to +91 8171739752 using a wa.me (or equivalent) URL.",
+        "A dedicated WhatsApp CTA banner section is present with the specified headline and a button to WhatsApp.",
+        "There is at least one additional WhatsApp entry point outside the banner (e.g., in header/footer or a floating button)."
+      ],
+      "file_operations": [
+        {
+          "path": "frontend/src/components/WhatsAppBanner.tsx",
+          "operation": "create",
+          "description": "Create the dedicated WhatsApp CTA banner section with the headline “Need Help? Chat on WhatsApp” and a button wired via the WhatsApp helper; style in premium glassmorphism theme."
+        },
+        {
+          "path": "frontend/src/components/FloatingWhatsAppButton.tsx",
+          "operation": "create",
+          "description": "Add a persistent floating WhatsApp entry point wired via the WhatsApp helper; ensure it’s accessible on mobile and doesn’t obstruct core CTAs."
+        },
+        {
+          "path": "frontend/src/components/Header.tsx",
+          "operation": "modify",
+          "description": "Ensure the header contains a WhatsApp link/button that opens chat to +91 8171739752 using the centralized helper."
+        },
+        {
+          "path": "frontend/src/components/Footer.tsx",
+          "operation": "modify",
+          "description": "Ensure footer WhatsApp link/button uses the centralized helper and matches the premium theme."
+        },
+        {
+          "path": "frontend/src/pages/HomePage.tsx",
+          "operation": "modify",
+          "description": "Insert the WhatsApp CTA banner in the required homepage section order and ensure all WhatsApp CTAs (including hero “Join WhatsApp”) use the centralized helper."
+        }
+      ]
+    },
+    {
+      "id": "REQ-5",
+      "summary": "Implement a checkout UI with payment method selection and a backend-configured payment-link redirect strategy with WhatsApp fallback when missing.",
+      "acceptanceCriteria": [
+        "Clicking buy on any course/ebook opens a checkout UI listing Razorpay, UPI, Paytm, and Debit/Credit card as payment options.",
+        "For each product+payment-method combination, the system can be configured with a payment URL in the backend and the frontend will redirect to it when present.",
+        "If a payment URL is missing for a chosen method, the UI shows a clear fallback path that includes a WhatsApp contact link to +91 8171739752.",
+        "Purchase attempts are recorded (e.g., created as an order/intent) in the backend with product, price at time of purchase, and chosen payment method."
+      ],
+      "file_operations": [
+        {
+          "path": "frontend/src/components/CheckoutDialog.tsx",
+          "operation": "create",
+          "description": "Create a checkout modal/dialog that lists payment options (Razorpay, UPI, Paytm, Debit/Credit card), collects selection, and drives the purchase flow; use shadcn-ui Dialog/Button components for accessible UI. Verify the component's usage instructions before implementing."
+        },
+        {
+          "path": "frontend/src/hooks/useCheckout.ts",
+          "operation": "create",
+          "description": "Create hooks/mutations that (1) create an order/intent via backend, (2) fetch the backend payment-link config for the selected method, (3) redirect to the external URL if present or show fallback instructions + WhatsApp link if not."
+        },
+        {
+          "path": "frontend/src/components/ProductCard.tsx",
+          "operation": "modify",
+          "description": "Wire the “Buy” / “Instant Buy” button to open the CheckoutDialog for the selected product."
+        },
+        {
+          "path": "frontend/src/pages/HomePage.tsx",
+          "operation": "modify",
+          "description": "Ensure homepage sections pass the correct product data to ProductCard and that buy actions consistently open the checkout UI."
+        }
+      ]
+    },
+    {
+      "id": "REQ-6",
+      "summary": "Provide gated instant ebook downloads after payment and a “My Downloads” page that lists paid ebook purchases for the current session/principal.",
+      "acceptanceCriteria": [
+        "There is a user-facing page/section (“My Downloads” or equivalent) that lists ebooks that have been marked paid and shows a download button for each.",
+        "Ebook files are served as static assets from the frontend build (not streamed through the backend), and download access is gated by a backend-issued token or authorization check.",
+        "Unpaid ebook purchases do not show active download buttons.",
+        "Backend stores purchase/payment status for ebook orders and can transition an order from unpaid to paid (initial implementation may include a simple internal/admin-only method or a temporary UI action clearly labeled as a placeholder until real payment confirmation is wired)."
+      ],
+      "file_operations": [
+        {
+          "path": "frontend/src/pages/MyDownloadsPage.tsx",
+          "operation": "create",
+          "description": "Create “My Downloads” page that fetches the caller’s downloads from backend, filters to ebook purchases, and shows status-aware download actions (disabled/hidden for unpaid)."
+        },
+        {
+          "path": "frontend/src/pages/DownloadGatePage.tsx",
+          "operation": "create",
+          "description": "Create a gated download route that reads a token from the URL, validates it with backend, and then redirects/initiates download of the corresponding static ebook asset."
+        },
+        {
+          "path": "frontend/src/hooks/useDownloads.ts",
+          "operation": "create",
+          "description": "Create React Query hooks to fetch downloads for the current principal/session and a mutation to request a download token for a paid order."
+        },
+        {
+          "path": "frontend/src/components/Header.tsx",
+          "operation": "modify",
+          "description": "Add navigation entry to “My Downloads” and ensure it works on mobile."
+        },
+        {
+          "path": "frontend/src/App.tsx",
+          "operation": "modify",
+          "description": "Wire routes/views for “My Downloads” and the gated download page so they are reachable through navigation and token links."
+        },
+        {
+          "path": "frontend/src/components/OrderStatusBadge.tsx",
+          "operation": "create",
+          "description": "Add a small UI component to display order/payment status consistently across the downloads UI."
+        },
+        {
+          "path": "frontend/src/pages/MyDownloadsPage.tsx",
+          "operation": "modify",
+          "description": "Include a clearly labeled placeholder control (for development/testing) to trigger a backend state transition to paid when appropriate for the current order, without presenting it as real payment verification."
+        }
+      ]
+    },
+    {
+      "id": "REQ-7",
+      "summary": "Add a premium Testimonials/Student Results section with 4–6 review cards and an earnings-screenshot-style layout using placeholder assets.",
+      "acceptanceCriteria": [
+        "Testimonials section shows between 4 and 6 testimonials with names/short quotes and a visual “results screenshot” style element per entry (or a subset).",
+        "Layout is responsive and maintains good spacing/typography on mobile.",
+        "Section styling matches the site theme (dark, gradient accents, glass cards)."
+      ],
+      "file_operations": [
+        {
+          "path": "frontend/src/components/TestimonialsSection.tsx",
+          "operation": "create",
+          "description": "Implement Testimonials/Student Results section with 4–6 glassmorphism review cards and an earnings-screenshot-style visual layout using the generated result images."
+        },
+        {
+          "path": "frontend/src/pages/HomePage.tsx",
+          "operation": "modify",
+          "description": "Insert the Testimonials/Student Results section in the required order and ensure responsive spacing/typography matches the premium theme."
+        }
+      ]
+    },
+    {
+      "id": "REQ-8",
+      "summary": "Include required static images (logo, hero background, product thumbnails/covers, testimonial result screenshots) as frontend static assets and render them in the UI.",
+      "acceptanceCriteria": [
+        "All course cards show a thumbnail image; all ebook cards show a cover image; hero uses a premium background/visual.",
+        "Generated images are stored and referenced as static assets under frontend/public/assets/generated (or equivalent static public directory).",
+        "No backend endpoint is required to fetch or transform images at runtime."
+      ],
+      "file_operations": [
+        {
+          "path": "frontend/public/assets/generated/ai-academy-logo.dim_512x256.png",
+          "operation": "create",
+          "description": "Add the generated logo asset as a static file and ensure it is used by header/hero branding."
+        },
+        {
+          "path": "frontend/public/assets/generated/hero-background.dim_1920x1080.png",
+          "operation": "create",
+          "description": "Add the generated hero background image as a static file for the homepage hero section."
+        },
+        {
+          "path": "frontend/public/assets/generated/course-ai-mastery.dim_800x450.png",
+          "operation": "create",
+          "description": "Add the generated course thumbnail as a static file for AI Mastery Course."
+        },
+        {
+          "path": "frontend/public/assets/generated/course-chatgpt-earning.dim_800x450.png",
+          "operation": "create",
+          "description": "Add the generated course thumbnail as a static file for ChatGPT Earning Course."
+        },
+        {
+          "path": "frontend/public/assets/generated/course-freelancing.dim_800x450.png",
+          "operation": "create",
+          "description": "Add the generated course thumbnail as a static file for Freelancing Course."
+        },
+        {
+          "path": "frontend/public/assets/generated/course-instagram-growth.dim_800x450.png",
+          "operation": "create",
+          "description": "Add the generated course thumbnail as a static file for Instagram Growth Course."
+        },
+        {
+          "path": "frontend/public/assets/generated/ebook-ai-tools.dim_800x1200.png",
+          "operation": "create",
+          "description": "Add the generated ebook cover as a static file for AI Tools Ebook."
+        },
+        {
+          "path": "frontend/public/assets/generated/ebook-online-earning.dim_800x1200.png",
+          "operation": "create",
+          "description": "Add the generated ebook cover as a static file for Online Earning Ebook."
+        },
+        {
+          "path": "frontend/public/assets/generated/ebook-freelancing-blueprint.dim_800x1200.png",
+          "operation": "create",
+          "description": "Add the generated ebook cover as a static file for Freelancing Blueprint."
+        },
+        {
+          "path": "frontend/public/assets/generated/ebook-digital-marketing.dim_800x1200.png",
+          "operation": "create",
+          "description": "Add the generated ebook cover as a static file for Digital Marketing Ebook."
+        },
+        {
+          "path": "frontend/public/assets/generated/result-1.dim_900x600.png",
+          "operation": "create",
+          "description": "Add generated testimonial result screenshot-style image for use in Testimonials/Student Results section."
+        },
+        {
+          "path": "frontend/public/assets/generated/result-2.dim_900x600.png",
+          "operation": "create",
+          "description": "Add generated testimonial result screenshot-style image for use in Testimonials/Student Results section."
+        },
+        {
+          "path": "frontend/public/assets/generated/result-3.dim_900x600.png",
+          "operation": "create",
+          "description": "Add generated testimonial result screenshot-style image for use in Testimonials/Student Results section."
+        },
+        {
+          "path": "frontend/public/assets/generated/result-4.dim_900x600.png",
+          "operation": "create",
+          "description": "Add generated testimonial result screenshot-style image for use in Testimonials/Student Results section."
+        },
+        {
+          "path": "frontend/src/pages/HomePage.tsx",
+          "operation": "modify",
+          "description": "Render the hero background (frontend/public/assets/generated/hero-background.dim_1920x1080.png) and logo (frontend/public/assets/generated/ai-academy-logo.dim_512x256.png) as static assets in the hero/header; ensure product cards display their respective static images."
+        },
+        {
+          "path": "frontend/src/components/TestimonialsSection.tsx",
+          "operation": "modify",
+          "description": "Wire result screenshot-style images from frontend/public/assets/generated/result-1.dim_900x600.png through frontend/public/assets/generated/result-4.dim_900x600.png into the testimonials layout."
+        }
+      ]
+    }
+  ]
+}

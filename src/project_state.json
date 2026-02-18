@@ -1,0 +1,116 @@
+{
+  "schemaVersion": "1.0.0",
+  "projectStateVersion": 3,
+  "summary": "Premium modern course-selling website for AI Academy (online learning platform) featuring a dark/glassmorphism UI, homepage marketing sections (hero, featured courses, ebook store, testimonials, offers), WhatsApp CTAs, and payment gateway integration with instant ebook delivery after payment.",
+  "architectural_notes": [
+    "Project is a premium marketing + checkout website for AI Academy with courses and ebooks; design style: dark, royal blue/purple gradients, glassmorphism, smooth animations, fully responsive.",
+    "Payment integration to support Razorpay/UPI/Paytm/cards and trigger instant ebook delivery after successful payment."
+  ],
+  "known_issues": [
+    "Unresolved requirements: delivery method for courses/ebooks (download link vs dashboard), whether user login is needed, and preferred payment checkout flow (redirect vs embedded/popup)."
+  ],
+  "isFixRequest": false,
+  "imageRequirements": "## Required Images\n- Premium edtech wordmark logo on dark background, sleek minimal style (ai-academy-logo.dim_512x256.png)\n- Abstract dark gradient hero background with royal blue and purple light streaks, modern high-end (hero-background.dim_1920x1080.png)\n- Course thumbnail: futuristic AI/brain/circuit illustration, dark premium (course-ai-mastery.dim_800x450.png)\n- Course thumbnail: ChatGPT/assistant iconography, dark premium (course-chatgpt-earning.dim_800x450.png)\n- Course thumbnail: freelancing/remote work abstract illustration, dark premium (course-freelancing.dim_800x450.png)\n- Course thumbnail: social media growth abstract chart/phone illustration, dark premium (course-instagram-growth.dim_800x450.png)\n- Ebook cover: AI tools themed, premium dark (ebook-ai-tools.dim_800x1200.png)\n- Ebook cover: online earning themed, premium dark (ebook-online-earning.dim_800x1200.png)\n- Ebook cover: freelancing blueprint themed, premium dark (ebook-freelancing-blueprint.dim_800x1200.png)\n- Ebook cover: digital marketing themed, premium dark (ebook-digital-marketing.dim_800x1200.png)\n- Testimonial result screenshot-style card image, dark UI with subtle numbers/graph (result-1.dim_900x600.png)\n- Testimonial result screenshot-style card image, dark UI with subtle numbers/graph (result-2.dim_900x600.png)\n- Testimonial result screenshot-style card image, dark UI with subtle numbers/graph (result-3.dim_900x600.png)\n- Testimonial result screenshot-style card image, dark UI with subtle numbers/graph (result-4.dim_900x600.png)",
+  "existing_features": [
+    {
+      "id": "feature-create-a-premium-high-end-trustworthy-dark-ui-with-royal-blue-purple-gradients-glassmorphism-cards-smooth-hover-scroll-animations-and-full-mobile-responsiveness-use-professional-typography-poppins-and-or-inter-and-apply-the-style-consistently-across-all-pages-sections",
+      "title": "Create a premium, high-end, trustworthy dark UI with royal blue/purple gradients, glassmorphism cards, smooth hover/scroll animations, and full mobile responsiveness; use professional typography (Poppins and/or Inter) and apply the style consistently across all pages/sections.",
+      "reqIds": [
+        "REQ-1"
+      ],
+      "version": 1
+    },
+    {
+      "id": "feature-implement-the-homepage-with-the-specified-sections-and-exact-hero-copy-ctas-hero-heading-master-ai-digital-skills-and-earn-online-subtext-learn-ai-freelancing-and-digital-skills-with-practical-courses-ebooks-cta-buttons-view-courses-buy-ebooks-join-whatsapp-featured-courses-ebook-store-why-choose-ai-academy-student-results-testimonials-pricing-offers-combo-discount-limited-time-whatsapp-cta-banner-and-footer-with-about-contact-whatsapp-social-icons-copyright",
+      "title": "Implement the homepage with the specified sections and exact hero copy/CTAs: Hero (heading “Master AI & Digital Skills and Earn Online”, subtext “Learn AI, freelancing, and digital skills with practical courses & ebooks”, CTA buttons “View Courses”, “Buy Ebooks”, “Join WhatsApp”), Featured Courses, Ebook Store, Why Choose AI Academy, Student Results/Testimonials, Pricing & Offers (combo/discount/limited-time), WhatsApp CTA banner, and Footer with about/contact/WhatsApp/social icons/copyright.",
+      "reqIds": [
+        "REQ-2"
+      ],
+      "version": 1
+    },
+    {
+      "id": "feature-add-data-driven-product-listings-for-exactly-4-featured-courses-ai-mastery-course-chatgpt-earning-course-freelancing-course-instagram-growth-course-and-exactly-4-ebooks-ai-tools-ebook-online-earning-ebook-freelancing-blueprint-digital-marketing-ebook-each-showing-name-price-image-and-a-buy-button-enable-view-courses-and-buy-ebooks-hero-ctas-to-scroll-navigate-to-their-respective-sections",
+      "title": "Add data-driven product listings for exactly 4 featured courses (AI Mastery Course, ChatGPT Earning Course, Freelancing Course, Instagram Growth Course) and exactly 4 ebooks (AI Tools Ebook, Online Earning Ebook, Freelancing Blueprint, Digital Marketing Ebook), each showing name, price, image, and a buy button; enable “View Courses” and “Buy Ebooks” hero CTAs to scroll/navigate to their respective sections.",
+      "reqIds": [
+        "REQ-3"
+      ],
+      "version": 1
+    },
+    {
+      "id": "feature-implement-whatsapp-contact-integration-across-the-site-all-whatsapp-ctas-buttons-must-open-whatsapp-chat-to-91-8171739752-including-the-dedicated-whatsapp-cta-banner-need-help-chat-on-whatsapp-and-at-least-one-persistent-whatsapp-entry-point-e-g-header-or-floating-button",
+      "title": "Implement WhatsApp contact integration across the site: all WhatsApp CTAs/buttons must open WhatsApp chat to +91 8171739752, including the dedicated WhatsApp CTA banner (“Need Help? Chat on WhatsApp”) and at least one persistent WhatsApp entry point (e.g., header or floating button).",
+      "reqIds": [
+        "REQ-4"
+      ],
+      "version": 1
+    },
+    {
+      "id": "feature-add-a-purchase-flow-that-supports-the-listed-payment-options-razorpay-upi-paytm-debit-credit-card-by-presenting-a-checkout-ui-where-users-select-a-payment-method-and-proceed-implement-a-configurable-payment-link-strategy-per-product-method-stored-in-backend-configuration-that-can-redirect-users-to-the-appropriate-external-payment-url-when-available-and-provide-a-fallback-instruction-state-e-g-contact-on-whatsapp-when-a-link-is-not-configured",
+      "title": "Add a purchase flow that supports the listed payment options (Razorpay, UPI, Paytm, Debit/Credit card) by presenting a checkout UI where users select a payment method and proceed; implement a configurable payment-link strategy per product/method (stored in backend configuration) that can redirect users to the appropriate external payment URL when available, and provide a fallback instruction state (e.g., “Contact on WhatsApp”) when a link is not configured.",
+      "reqIds": [
+        "REQ-5"
+      ],
+      "version": 1
+    },
+    {
+      "id": "feature-provide-instant-ebook-download-after-payment-via-a-backend-managed-delivery-mechanism-after-a-purchase-is-marked-paid-the-user-can-download-the-purchased-ebook-file-from-the-frontend-served-as-a-static-asset-through-a-gated-download-link-token-created-by-the-backend-include-a-simple-my-downloads-page-that-lists-paid-ebook-purchases-for-the-current-session-principal-and-allows-downloading",
+      "title": "Provide “instant ebook download after payment” via a backend-managed delivery mechanism: after a purchase is marked paid, the user can download the purchased ebook file from the frontend (served as a static asset) through a gated download link/token created by the backend; include a simple “My Downloads” page that lists paid ebook purchases for the current session/principal and allows downloading.",
+      "reqIds": [
+        "REQ-6"
+      ],
+      "version": 1
+    },
+    {
+      "id": "feature-add-a-testimonials-student-results-section-with-4-6-review-cards-and-an-earnings-screenshots-style-layout-using-provided-generated-placeholder-assets-ensure-the-section-matches-the-premium-glassmorphism-theme-and-remains-readable-on-mobile",
+      "title": "Add a Testimonials/Student Results section with 4–6 review cards and an “earnings screenshots style” layout using provided/generated placeholder assets; ensure the section matches the premium glassmorphism theme and remains readable on mobile.",
+      "reqIds": [
+        "REQ-7"
+      ],
+      "version": 1
+    },
+    {
+      "id": "feature-generate-and-include-required-static-images-logo-hero-background-product-thumbnails-covers-testimonial-style-result-screenshots-and-render-them-from-frontend-static-assets-do-not-serve-generated-images-from-the-backend",
+      "title": "Generate and include required static images (logo, hero background, product thumbnails/covers, testimonial-style result screenshots) and render them from frontend static assets; do not serve generated images from the backend.",
+      "reqIds": [
+        "REQ-8"
+      ],
+      "version": 1
+    }
+  ],
+  "new_feature_requests": [
+    {
+      "id": "AR-1",
+      "summary": "Create premium dark + gradient modern UI (glassmorphism cards, smooth animations/hover effects, mobile responsive, Poppins/Inter fonts) for AI Academy website",
+      "reqIds": [],
+      "status": "pending"
+    },
+    {
+      "id": "AR-2",
+      "summary": "Build homepage sections: Hero with CTAs (View Courses, Buy Ebooks, Join WhatsApp), Featured Courses, Ebook Store, Why Choose, Testimonials/Results, Pricing & Offers, WhatsApp CTA banner, Footer",
+      "reqIds": [],
+      "status": "pending"
+    },
+    {
+      "id": "AR-3",
+      "summary": "Implement product listings for 4 featured courses (price, image, buy button) and 4 ebooks (price, instant buy button)",
+      "reqIds": [],
+      "status": "pending"
+    },
+    {
+      "id": "AR-4",
+      "summary": "Add WhatsApp integration/CTAs linking to +91 8171739752 (header/sections/footer button as needed)",
+      "reqIds": [],
+      "status": "pending"
+    },
+    {
+      "id": "AR-5",
+      "summary": "Integrate payments (Razorpay, UPI, Paytm, Debit/Credit card) and support instant ebook download after payment",
+      "reqIds": [],
+      "status": "pending"
+    }
+  ],
+  "gameProjectType": "none",
+  "projectName": "AI Academy",
+  "clarification_mode": "instant",
+  "clarification_rounds": 0
+}

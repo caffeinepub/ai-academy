@@ -1,0 +1,181 @@
+{
+  "kind": "feature_evidence_report",
+  "features": [
+    {
+      "featureId": "feature-create-a-premium-high-end-trustworthy-dark-ui-with-royal-blue-purple-gradients-glassmorphism-cards-smooth-hover-scroll-animations-and-full-mobile-responsiveness-use-professional-typography-poppins-and-or-inter-and-apply-the-style-consistently-across-all-pages-sections",
+      "featureTitle": "Create a premium, high-end, trustworthy dark UI with royal blue/purple gradients, glassmorphism cards, smooth hover/scroll animations, and full mobile responsiveness; use professional typography (Poppins and/or Inter) and apply the style consistently across all pages/sections.",
+      "files": [
+        "frontend/index.html",
+        "frontend/src/components/GlassCard.tsx",
+        "frontend/src/components/Section.tsx",
+        "frontend/src/index.css",
+        "frontend/tailwind.config.js"
+      ],
+      "components": [
+        "authorization@4.0.0",
+        "core-infrastructure@1.0.2",
+        "shadcn-ui@1.0.0",
+        "build-template-react@1.0.0",
+        "initial-app@1.0.0",
+        "github-export-icp-cli@1.0.0"
+      ],
+      "testIds": [
+        "REQ-1"
+      ],
+      "confidence": "high"
+    },
+    {
+      "featureId": "feature-implement-the-homepage-with-the-specified-sections-and-exact-hero-copy-ctas-hero-heading-master-ai-digital-skills-and-earn-online-subtext-learn-ai-freelancing-and-digital-skills-with-practical-courses-ebooks-cta-buttons-view-courses-buy-ebooks-join-whatsapp-featured-courses-ebook-store-why-choose-ai-academy-student-results-testimonials-pricing-offers-combo-discount-limited-time-whatsapp-cta-banner-and-footer-with-about-contact-whatsapp-social-icons-copyright",
+      "featureTitle": "Implement the homepage with the specified sections and exact hero copy/CTAs: Hero (heading “Master AI & Digital Skills and Earn Online”, subtext “Learn AI, freelancing, and digital skills with practical courses & ebooks”, CTA buttons “View Courses”, “Buy Ebooks”, “Join WhatsApp”), Featured Courses, Ebook Store, Why Choose AI Academy, Student Results/Testimonials, Pricing & Offers (combo/discount/limited-time), WhatsApp CTA banner, and Footer with about/contact/WhatsApp/social icons/copyright.",
+      "files": [
+        "frontend/src/App.tsx",
+        "frontend/src/components/Footer.tsx",
+        "frontend/src/components/Header.tsx",
+        "frontend/src/pages/HomePage.tsx",
+        "frontend/src/utils/whatsapp.ts"
+      ],
+      "components": [
+        "authorization@4.0.0",
+        "core-infrastructure@1.0.2",
+        "shadcn-ui@1.0.0",
+        "build-template-react@1.0.0",
+        "initial-app@1.0.0",
+        "github-export-icp-cli@1.0.0"
+      ],
+      "testIds": [
+        "REQ-2"
+      ],
+      "confidence": "high"
+    },
+    {
+      "featureId": "feature-add-data-driven-product-listings-for-exactly-4-featured-courses-ai-mastery-course-chatgpt-earning-course-freelancing-course-instagram-growth-course-and-exactly-4-ebooks-ai-tools-ebook-online-earning-ebook-freelancing-blueprint-digital-marketing-ebook-each-showing-name-price-image-and-a-buy-button-enable-view-courses-and-buy-ebooks-hero-ctas-to-scroll-navigate-to-their-respective-sections",
+      "featureTitle": "Add data-driven product listings for exactly 4 featured courses (AI Mastery Course, ChatGPT Earning Course, Freelancing Course, Instagram Growth Course) and exactly 4 ebooks (AI Tools Ebook, Online Earning Ebook, Freelancing Blueprint, Digital Marketing Ebook), each showing name, price, image, and a buy button; enable “View Courses” and “Buy Ebooks” hero CTAs to scroll/navigate to their respective sections.",
+      "files": [
+        "frontend/src/components/EbookStoreSection.tsx",
+        "frontend/src/components/FeaturedCoursesSection.tsx",
+        "frontend/src/components/ProductCard.tsx",
+        "frontend/src/pages/HomePage.tsx"
+      ],
+      "components": [
+        "authorization@4.0.0",
+        "core-infrastructure@1.0.2",
+        "shadcn-ui@1.0.0",
+        "build-template-react@1.0.0",
+        "initial-app@1.0.0",
+        "github-export-icp-cli@1.0.0"
+      ],
+      "testIds": [
+        "REQ-3"
+      ],
+      "confidence": "high"
+    },
+    {
+      "featureId": "feature-implement-whatsapp-contact-integration-across-the-site-all-whatsapp-ctas-buttons-must-open-whatsapp-chat-to-91-8171739752-including-the-dedicated-whatsapp-cta-banner-need-help-chat-on-whatsapp-and-at-least-one-persistent-whatsapp-entry-point-e-g-header-or-floating-button",
+      "featureTitle": "Implement WhatsApp contact integration across the site: all WhatsApp CTAs/buttons must open WhatsApp chat to +91 8171739752, including the dedicated WhatsApp CTA banner (“Need Help? Chat on WhatsApp”) and at least one persistent WhatsApp entry point (e.g., header or floating button).",
+      "files": [
+        "frontend/src/components/FloatingWhatsAppButton.tsx",
+        "frontend/src/components/Footer.tsx",
+        "frontend/src/components/Header.tsx",
+        "frontend/src/components/WhatsAppBanner.tsx",
+        "frontend/src/pages/HomePage.tsx"
+      ],
+      "components": [
+        "authorization@4.0.0",
+        "core-infrastructure@1.0.2",
+        "shadcn-ui@1.0.0",
+        "build-template-react@1.0.0",
+        "initial-app@1.0.0",
+        "github-export-icp-cli@1.0.0"
+      ],
+      "testIds": [
+        "REQ-4"
+      ],
+      "confidence": "high"
+    },
+    {
+      "featureId": "feature-add-a-purchase-flow-that-supports-the-listed-payment-options-razorpay-upi-paytm-debit-credit-card-by-presenting-a-checkout-ui-where-users-select-a-payment-method-and-proceed-implement-a-configurable-payment-link-strategy-per-product-method-stored-in-backend-configuration-that-can-redirect-users-to-the-appropriate-external-payment-url-when-available-and-provide-a-fallback-instruction-state-e-g-contact-on-whatsapp-when-a-link-is-not-configured",
+      "featureTitle": "Add a purchase flow that supports the listed payment options (Razorpay, UPI, Paytm, Debit/Credit card) by presenting a checkout UI where users select a payment method and proceed; implement a configurable payment-link strategy per product/method (stored in backend configuration) that can redirect users to the appropriate external payment URL when available, and provide a fallback instruction state (e.g., “Contact on WhatsApp”) when a link is not configured.",
+      "files": [
+        "frontend/src/components/CheckoutDialog.tsx",
+        "frontend/src/components/ProductCard.tsx",
+        "frontend/src/hooks/useCheckout.ts",
+        "frontend/src/pages/HomePage.tsx"
+      ],
+      "components": [
+        "authorization@4.0.0",
+        "core-infrastructure@1.0.2",
+        "shadcn-ui@1.0.0",
+        "build-template-react@1.0.0",
+        "initial-app@1.0.0",
+        "github-export-icp-cli@1.0.0"
+      ],
+      "testIds": [
+        "REQ-5"
+      ],
+      "confidence": "high"
+    },
+    {
+      "featureId": "feature-provide-instant-ebook-download-after-payment-via-a-backend-managed-delivery-mechanism-after-a-purchase-is-marked-paid-the-user-can-download-the-purchased-ebook-file-from-the-frontend-served-as-a-static-asset-through-a-gated-download-link-token-created-by-the-backend-include-a-simple-my-downloads-page-that-lists-paid-ebook-purchases-for-the-current-session-principal-and-allows-downloading",
+      "featureTitle": "Provide “instant ebook download after payment” via a backend-managed delivery mechanism: after a purchase is marked paid, the user can download the purchased ebook file from the frontend (served as a static asset) through a gated download link/token created by the backend; include a simple “My Downloads” page that lists paid ebook purchases for the current session/principal and allows downloading.",
+      "files": [
+        "frontend/src/App.tsx",
+        "frontend/src/components/Header.tsx",
+        "frontend/src/components/OrderStatusBadge.tsx",
+        "frontend/src/pages/DownloadGatePage.tsx",
+        "frontend/src/pages/MyDownloadsPage.tsx"
+      ],
+      "components": [
+        "authorization@4.0.0",
+        "core-infrastructure@1.0.2",
+        "shadcn-ui@1.0.0",
+        "build-template-react@1.0.0",
+        "initial-app@1.0.0",
+        "github-export-icp-cli@1.0.0"
+      ],
+      "testIds": [
+        "REQ-6"
+      ],
+      "confidence": "high"
+    },
+    {
+      "featureId": "feature-add-a-testimonials-student-results-section-with-4-6-review-cards-and-an-earnings-screenshots-style-layout-using-provided-generated-placeholder-assets-ensure-the-section-matches-the-premium-glassmorphism-theme-and-remains-readable-on-mobile",
+      "featureTitle": "Add a Testimonials/Student Results section with 4–6 review cards and an “earnings screenshots style” layout using provided/generated placeholder assets; ensure the section matches the premium glassmorphism theme and remains readable on mobile.",
+      "files": [
+        "frontend/src/components/TestimonialsSection.tsx",
+        "frontend/src/pages/HomePage.tsx"
+      ],
+      "components": [
+        "authorization@4.0.0",
+        "core-infrastructure@1.0.2",
+        "shadcn-ui@1.0.0",
+        "build-template-react@1.0.0",
+        "initial-app@1.0.0",
+        "github-export-icp-cli@1.0.0"
+      ],
+      "testIds": [
+        "REQ-7"
+      ],
+      "confidence": "high"
+    },
+    {
+      "featureId": "feature-generate-and-include-required-static-images-logo-hero-background-product-thumbnails-covers-testimonial-style-result-screenshots-and-render-them-from-frontend-static-assets-do-not-serve-generated-images-from-the-backend",
+      "featureTitle": "Generate and include required static images (logo, hero background, product thumbnails/covers, testimonial-style result screenshots) and render them from frontend static assets; do not serve generated images from the backend.",
+      "files": [
+        "frontend/src/components/TestimonialsSection.tsx",
+        "frontend/src/pages/HomePage.tsx"
+      ],
+      "components": [
+        "authorization@4.0.0",
+        "core-infrastructure@1.0.2",
+        "shadcn-ui@1.0.0",
+        "build-template-react@1.0.0",
+        "initial-app@1.0.0",
+        "github-export-icp-cli@1.0.0"
+      ],
+      "testIds": [
+        "REQ-8"
+      ],
+      "confidence": "high"
+    }
+  ]
+}

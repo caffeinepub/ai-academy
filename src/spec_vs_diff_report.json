@@ -1,0 +1,71 @@
+{
+  "kind": "spec_vs_diff_report",
+  "version": "1.0",
+  "generatedAt": "2026-02-18T11:59:51.135Z",
+  "summary": "Most core homepage sections, premium dark/glass styling components, WhatsApp CTAs (including a floating button and banner), product listings sourced from backend, and a checkout dialog with the required payment methods are present. However, the diff summary does not provide enough evidence that the instant ebook download-after-payment flow (token-gated static downloads + paid/unpaid gating + a way to mark paid) is fully implemented end-to-end. There is also evidence of an extra promotional footer link not requested.",
+  "missing_requirements": [
+    {
+      "id": "REQ-6",
+      "requirement": "Provide “instant ebook download after payment” via a backend-managed delivery mechanism: after a purchase is marked paid, the user can download the purchased ebook file from the frontend through a gated download link/token created by the backend; include a simple “My Downloads” page that lists paid ebook purchases for the current session/principal and allows downloading.",
+      "reason": "While the diff shows pages/components suggesting downloads exist (MyDownloadsPage, DownloadGatePage), the provided diff summary does not include evidence of (a) backend-issued download token creation/validation, (b) gating downloads based on paid status, and (c) an implemented mechanism to transition an ebook order from unpaid to paid (admin/placeholder). backend/main.mo is truncated before relevant methods, and the downloads pages are not shown.",
+      "evidence": [
+        "backend/main.mo (truncated)",
+        "frontend/src/App.tsx (references MyDownloadsPage and DownloadGatePage, but pages not shown)"
+      ]
+    }
+  ],
+  "hallucinated_features": [
+    {
+      "description": "Promotional footer link to caffeine.ai (“Built with … using … caffeine.ai/?utm_source=…”)",
+      "reason": "BuildRequest did not request third-party promotion/attribution links in the footer beyond about/contact/WhatsApp/social icons/copyright.",
+      "evidence": [
+        "frontend/src/components/Footer.tsx (truncated)"
+      ]
+    },
+    {
+      "description": "Secret admin-token URL parameter handling and access-control initialization via _initializeAccessControlWithSecret",
+      "reason": "BuildRequest did not request a secret URL parameter mechanism or explicit access-control initialization flow. (REQ-6 allows an admin-only method to mark paid, but the diff summary does not show this is specifically used for that purpose.)",
+      "evidence": [
+        "frontend/src/hooks/useActor.ts",
+        "backend/main.mo (imports MixinAuthorization/AccessControl; truncated)"
+      ]
+    }
+  ],
+  "confidence": 0.62,
+  "changed_files": [
+    "all_files_summary.json",
+    "backend/main.mo",
+    "frontend-file-summaries.txt",
+    "frontend/index.css",
+    "frontend/index.html",
+    "frontend/src/App.tsx",
+    "frontend/src/components/CheckoutDialog.tsx",
+    "frontend/src/components/EbookStoreSection.tsx",
+    "frontend/src/components/FeaturedCoursesSection.tsx",
+    "frontend/src/components/FloatingWhatsAppButton.tsx",
+    "frontend/src/components/Footer.tsx",
+    "frontend/src/components/GlassCard.tsx",
+    "frontend/src/components/Header.tsx",
+    "frontend/src/components/HeroSection.tsx",
+    "frontend/src/components/OrderStatusBadge.tsx",
+    "frontend/src/components/PricingOffersSection.tsx",
+    "frontend/src/components/ProductCard.tsx",
+    "frontend/src/components/Section.tsx",
+    "frontend/src/components/TestimonialsSection.tsx",
+    "frontend/src/components/WhatsAppBanner.tsx",
+    "frontend/src/components/WhyChooseSection.tsx",
+    "frontend/src/hooks/useActor.ts",
+    "frontend/src/hooks/useCheckout.ts",
+    "frontend/src/hooks/useInternetIdentity.ts",
+    "frontend/src/hooks/useQueries.ts",
+    "frontend/src/index.css",
+    "frontend/src/main.tsx",
+    "frontend/src/pages/DownloadGatePage.tsx",
+    "frontend/src/pages/HomePage.tsx",
+    "frontend/src/pages/MyDownloadsPage.tsx",
+    "frontend/src/utils/urlParams.ts",
+    "frontend/src/utils/whatsapp.ts",
+    "frontend/tailwind.config.js",
+    "project_state.json"
+  ]
+}
